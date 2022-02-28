@@ -1,0 +1,67 @@
+
+body
+{
+    font-family: sans-serif;
+}
+.title
+{
+    color: rgb(121, 34, 34);
+    margin-top: 4%;
+    margin-bottom: 2%;
+}
+h1
+{
+    text-align: center;
+}
+.text-todo
+{
+    height: 40px;
+    width: 600px;
+    font-size: 18px;
+    border-radius: 10px;
+    border-color: rgb(185, 185, 185);
+    box-shadow: 0 2.5px 5px #000;
+}
+.card
+{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.button-plus
+{
+    background-color: rgb(255, 255, 255);
+    border-color: rgb(185, 185, 185);
+    border-radius: 20px;
+    margin-left: 10px;
+    box-shadow: 0 2.5px 5px #000;
+
+}
+.button-plus-image
+{
+    width: 30px;
+    height: 30px;
+}
+.wrapper
+{
+	height: 100%;
+    display: flex;
+    align-items:center;
+    justify-content: center;
+    overflow:hidden;
+}
+.todo 
+{
+    padding-left: 0; }
+    .todo li {
+        text-decoration: none;
+      padding: 1em;
+      list-style-type: none; }
+      .todo li:not(:last-child) {
+        border-bottom: 1px solid #000; 
+}
+
+
+
+
+        
