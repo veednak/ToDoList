@@ -3,6 +3,11 @@ let addMessage = document.querySelector('.text-todo'),
   toDo = document.querySelector('.todo');
 
 let toDoList = [];
+
+function byField(field) {
+  return (a, b) => a[field] > b[field] ? 1 : -1;
+}
+
 if (localStorage.getItem('todo')) {
   toDoList = JSON.parse(localStorage.getItem('todo'));
   displayMessages();
@@ -15,7 +20,6 @@ addButton.addEventListener('click', function () {
     checked: false,
     important: false,
   };
-
   toDoList.push(newToDo);
   displayMessages();
   localStorage.setItem('todo', JSON.stringify(toDoList));
@@ -24,7 +28,6 @@ addButton.addEventListener('click', function () {
 function displayMessages() {
   let displayMessage = '';
   toDoList.forEach(function (item, i) {
-    console.log(item);
     displayMessage += `
         <li>
             <input class="todoli" type='checkbox' data-id="${
@@ -37,6 +40,7 @@ function displayMessages() {
     `;
     toDo.innerHTML = displayMessage;
   });
+  
   let elem = Array.from(document.querySelectorAll(`.todoli`));
   elem.forEach((item) => {
     item.addEventListener('change', function (event) {
@@ -48,10 +52,11 @@ function displayMessages() {
 
 function change(event) {
   let idInput = event.target.dataset.id;
-  console.log(idInput);
+
   for (let i = 0; i < toDoList.length; i++) {
     if (toDoList[i].id == idInput) {
       toDoList[i].checked = !toDoList[i].checked;
+      toDoList.sort(byField('checked'));
       localStorage.setItem('todo', JSON.stringify(toDoList));
       break;
     }
