@@ -20,7 +20,7 @@ addButton.addEventListener('click', function () {
     checked: false,
     important: false,
   };
-  toDoList.push(newToDo);
+  toDoList.unshift(newToDo);
   displayMessages();
   localStorage.setItem('todo', JSON.stringify(toDoList));
 });
