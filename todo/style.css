@@ -13,14 +13,27 @@ h1
 {
     text-align: center;
 }
+.check-label {
+    display: block;
+}
 .text-todo
 {
     height: 40px;
-    width: 600px;
+    width: 400px;
     font-size: 18px;
     border-radius: 10px;
     border-color: rgb(185, 185, 185);
     box-shadow: 0 2.5px 5px #000;
+}
+.text-search
+{
+    height: 40px;
+    width: 400px;
+    font-size: 18px;
+    border-radius: 10px;
+    border-color: rgb(185, 185, 185);
+    box-shadow: 0 2.5px 5px #000;
+    margin-left: 40px;
 }
 .card
 {
@@ -37,6 +50,7 @@ h1
     box-shadow: 0 2.5px 5px #000;
 
 }
+
 .button-plus-image
 {
     width: 30px;
@@ -62,6 +76,8 @@ h1
 }
 
 
-
+.hidden{
+    display: none;
+}
 
         

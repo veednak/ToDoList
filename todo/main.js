@@ -1,11 +1,13 @@
 let addMessage = document.querySelector('.text-todo'),
+  addMessageSearch = document.querySelector('.text-search'),
   addButton = document.querySelector('.button-plus'),
+  searchInput = document.querySelector('#search'),
   toDo = document.querySelector('.todo');
 
 let toDoList = [];
 
 function byField(field) {
-  return (a, b) => a[field] > b[field] ? 1 : -1;
+  return (a, b) => (a[field] > b[field] ? 1 : -1);
 }
 
 if (localStorage.getItem('todo')) {
@@ -20,27 +22,46 @@ addButton.addEventListener('click', function () {
     checked: false,
     important: false,
   };
+  console.log(newToDo.toDo);
+
   toDoList.unshift(newToDo);
   displayMessages();
   localStorage.setItem('todo', JSON.stringify(toDoList));
 });
 
-function displayMessages() {
+searchInput.addEventListener('change', function (event) {
+  const serchStr = this.value;
+  const items = Array.from(document.querySelectorAll('.item'));
+  items.forEach((item) => {
+    let label = item.querySelector('label');
+    if (label.querySelector('strike')) {
+      label = label.querySelector('strike');
+    }
+    if (!label.textContent.includes(serchStr)) {
+      item.classList.add('hidden');
+    } 
+    else {
+      item.classList.remove('hidden');
+    }
+  });
+});
+
+function addClick() {
   let displayMessage = '';
   toDoList.forEach(function (item, i) {
     displayMessage += `
-        <li>
-            <input class="todoli" type='checkbox' data-id="${
-              item.id
-            }" id='item_${i}'  ${item.checked ? 'checked' : ''}>
-            <label for='item_${i}'>${
+            <li class="item">
+                <input class="todoli" type='checkbox' data-id="${
+                  item.id
+                }" id='item_${i}'  ${item.checked ? 'checked' : ''}>
+                <label for='item_${i}'>${
       item.checked ? item.toDo.strike() : item.toDo
     }       </label>
-        </li>
-    `;
+            </li>
+        `;
     toDo.innerHTML = displayMessage;
   });
-  
+
   let elem = Array.from(document.querySelectorAll(`.todoli`));
   elem.forEach((item) => {
     item.addEventListener('change', function (event) {
@@ -48,6 +69,9 @@ function displayMessages() {
       displayMessages();
     });
   });
+}
+function displayMessages() {
+  addClick();
 }
 
 function change(event) {
