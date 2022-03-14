@@ -7,16 +7,26 @@
     </head>
     
     <body>
-        <h1 class="title"  >ToDoList</h1>
+        <h1 class="title"  >TODO LIST</h1>
 
         <div class="card">
-            <input class="text-todo" type="text"  placeholder="Add your ToDO">
-            <button class="button-plus">
-                <img class="button-plus-image" src="img/1200px-Plus_symbol.svg.png">
-            </button>
-            <input id="search" class="text-search" type="text"  placeholder="Search">
+            <input id="adding" class="text-todo" type="text"  placeholder="Add your ToDO" style='border: 0px; '>
+            <!-- <button class="button-plus">
+                <img class="button-plus-image" src="img/Plus.svg">
+            </button>  -->
+            <br />
         </div>
+        <div class="card">
+            <input id="search" class="text-search" type="search"  placeholder="Search.." style='border: 0px;'>
+            <br>
+        </div>
+        <div class="line">
+            <button class="clear-all" >CLEAR</button>
+            <button class="viewing" >TODO</button>
+            <button class="done">DONE</button>
+            <button class="all active" >ALL</button>
 
+        </div>
         <div class="wrapper">
             <ul class="todo"></ul>
         </div>
