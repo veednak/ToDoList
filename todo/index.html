@@ -8,10 +8,9 @@
 
   <body>
     <h1>TODO LIST</h1>
-
     <div class="card" id="card-focus">
       <input
-        id="adding"
+        id="new-task-id"
         class="text-todo"
         type="text"
         placeholder="Add your ToDO"
@@ -29,18 +28,18 @@
       />
       <br />
     </div>
-    <div class="line">
+    <div class="row">
       <div class="select-all">
         <label id="selectAll" class="label-text"> </label>
       </div>
       <div class="butts">
-        <button id="viewing" class="button">TODO</button>
-        <button id="done" class="button">DONE</button>
-        <button id="all" class="button">ALL</button>
+        <button id="button-viewing-content" class="button">TODO</button>
+        <button id="button-done-content" class="button">DONE</button>
+        <button id="button-all-content" class="button">ALL</button>
       </div>
     </div>
     <div class="wrapper">
-      <ul class="todo"></ul>
+      <ul class="list-todo"></ul>
     </div>
 
     <script src="main.js"></script>

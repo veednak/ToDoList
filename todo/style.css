@@ -1,3 +1,9 @@
+@font-face {
+  font-family: "Sinhala MN";
+  font-weight: 400;
+  src: url("src/Audrey/Audrey-Normal.otf");
+}
+
 body {
   background: #2f80ed;
 }
@@ -21,11 +27,11 @@ h1 {
 }
 
 .text-todo {
+  left: 0;
+  top: 0;
   text-align: left;
   width: 604px;
   height: 44px;
-  left: 0;
-  top: 0;
   background: #ffffff;
   outline: none;
   font-family: "Roboto";
@@ -50,16 +56,16 @@ input[type="text-list"]::placeholder {
 }
 
 .text-list {
-  border: #e0e0e0;
+  cursor: default;
+  margin-left: 15px;
   left: 0;
   top: 0;
+  width: 400px;
   outline: none;
   color: #2f80ed;
   text-align: left;
   font-size: 15px;
-  width: 400px;
-  margin-left: 15px;
-  cursor: default;
+  border: #e0e0e0;
   background: #ffffff;
   font-family: "Roboto";
 }
@@ -79,35 +85,35 @@ input[type="text"] {
 }
 
 .text-search {
-  width: 646px;
-  height: 46px;
+  margin-top: 20px;
   left: 0;
   top: 0;
+  width: 646px;
+  height: 46px;
   background: #ffffff;
   outline: none;
-  margin-top: 20px;
   font-family: "Roboto";
   font-size: 15px;
   border: 0;
 }
 
 input[type="search"] {
+  padding-left: 40px;
   background-color: white;
   background-position: 20px 15px;
   background-repeat: no-repeat;
-  padding-left: 40px;
   background-image: url("img/Search.svg");
   text-indent: 23px;
 }
 .adding-button {
-  position: absolute;
-  right: 20px;
-  width: 24px;
-  height: 24px;
   cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
+  position: absolute;
+  right: 20px;
+  width: 24px;
+  height: 24px;
 }
 .adding-button > img:hover,
 button-plus-image:active {
@@ -121,34 +127,34 @@ button-plus-image:active {
 }
 
 .card {
-  position: relative;
-  width: 646px;
   margin: auto;
   display: flex;
   align-items: center;
   justify-content: center;
+  position: relative;
+  width: 646px;
 }
 
 .button-plus {
-  background-color: rgb(255, 255, 255);
-  outline: none;
-  padding: 0;
-  border: none;
-  background: none;
   margin-left: -40px;
   margin-bottom: 7px;
+  padding: 0;
   width: 20px;
   height: 20px;
+  background-color: rgb(255, 255, 255);
+  outline: none;
+  border: none;
+  background: none;
 }
 
 .button-editing {
+  cursor: pointer;
+  margin-top: 3px;
+  float: right;
+  margin-right: 16px;
   padding: 0;
   border: none;
   background: none;
-  float: right;
-  margin-right: 16px;
-  cursor: pointer;
-  margin-top: 3px;
 }
 
 .button-pencil-image {
@@ -157,11 +163,11 @@ button-plus-image:active {
 }
 
 .button-trash {
+  cursor: pointer;
+  float: right;
   padding: 0;
   border: none;
   background: none;
-  float: right;
-  cursor: pointer;
 }
 
 .button-plus-image {
@@ -169,25 +175,26 @@ button-plus-image:active {
   height: 30px;
 }
 
-.line {
+.row {
   margin-left: auto;
   margin-right: auto;
   display: flex;
   justify-content: space-between;
-  padding: 0 20px 0 60px;
+  padding: 0 27px 0 60px;
+  padding-bottom: 4px;
   align-items: center;
   height: 46px;
   width: 646px;
   box-sizing: border-box;
   background: #ffffff;
   border-top: 1px solid #e0e0e0;
-  padding-bottom: 4px;
 }
 
 .butts {
-  width: 172px;
   display: flex;
   justify-content: space-between;
+  margin-left: 20px;
+  width: 172px;
 }
 
 .butts > button {
@@ -195,21 +202,20 @@ button-plus-image:active {
 }
 
 .button {
-  background-color: #ffffff;
-  border-color: #ffffff;
-  padding: 0;
-  border: none;
-  background: none;
+  cursor: pointer;
+  margin-right: 25px;
+  padding: 5px;
   float: right;
   height: 25px;
-  margin-right: 25px;
+  background-color: #ffffff;
+  border-color: #ffffff;
   color: #2f80ed;
   font-family: "Roboto";
   font-style: normal;
+  border: none;
   font-weight: 600;
   font-size: 14px;
   line-height: 14px;
-  cursor: pointer;
 }
 
 .wrapper {
@@ -220,18 +226,18 @@ button-plus-image:active {
   background: #ffffff;
 }
 
-.todo {
+.list-todo {
   padding-left: 0;
 }
 
-.todo li {
+.list-todo li {
   text-decoration: none;
   padding: 1em;
   border-top: 1px solid #e0e0e0;
   list-style-type: none;
 }
 
-.todo li:not(:last-child) {
+.list-todo li:not(:last-child) {
   border-top: 1px solid #e0e0e0;
   border-bottom: 0 solid #e0e0e0;
 }
@@ -250,30 +256,30 @@ input[type="checkbox"] {
 }
 
 label {
-  color: #000;
   cursor: default;
+  vertical-align: middle;
+  padding: 10px 0;
+  color: #000;
   font-weight: normal;
   line-height: 30px;
-  padding: 10px 0;
-  vertical-align: middle;
 }
 
 label:before {
+  cursor: pointer;
+  position: relative;
+  vertical-align: middle;
+  text-align: center;
+  width: 13px;
+  height: 13px;
   content: "";
   color: #000;
-  cursor: pointer;
   display: inline-block;
   font: 26px/11px Arial;
   font-weight: bolder;
-  position: relative;
-  text-align: center;
   text-indent: 0;
-  width: 13px;
-  height: 13px;
   background: #fff;
   border: 2px solid #e3e3e3;
   border-image: initial;
-  vertical-align: middle;
   font-size: 15px;
   color: #2f80ed;
   border: 3px solid #2f80ed;
@@ -298,7 +304,7 @@ input:disabled + label:before {
   border: 3px dotted #666;
 }
 
-button:hover {
+.button:hover {
   outline: none;
   border: none;
   background: #e1eeff;
@@ -318,9 +324,9 @@ button:hover {
 }
 
 .button-drag-image {
+  cursor: move;
   position: relative;
   vertical-align: middle;
   margin-right: 16px;
   margin-left: 4px;
-  cursor: move;
 }
