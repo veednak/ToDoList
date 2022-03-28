@@ -7,6 +7,7 @@ const toDoViewing = document.querySelector("#button-viewing-content");
 const completedTasks = document.querySelector("#button-done-content");
 const fullTasksList = document.querySelector("#button-all-content");
 const addingNewTask = document.querySelector("#new-task-id");
+const body = document.querySelector("body");
 
 let toDoList = [];
 
@@ -163,7 +164,14 @@ function addClick() {
   editing.forEach((item, i) => {
     item.addEventListener("click", function (event) {
       labelText[i].removeAttribute("readonly");
+
       editingImage[i].src = "./img/Done.svg";
+    });
+    document.addEventListener("click", function () {
+      if (event.target.contains(item)) {
+        editingImage[i].src = "./img/Pencil.svg";
+        labelText[i].setAttribute("readonly", "readonly");
+      }
     });
   });
 

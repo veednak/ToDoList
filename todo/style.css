@@ -62,7 +62,7 @@ input[type="text-list"]::placeholder {
   top: 0;
   width: 400px;
   outline: none;
-  color: #2f80ed;
+  color: #000000;
   text-align: left;
   font-size: 15px;
   border: #e0e0e0;
@@ -95,6 +95,13 @@ input[type="text"] {
   font-family: "Roboto";
   font-size: 15px;
   border: 0;
+}
+
+input::-webkit-search-decoration,
+input::-webkit-search-cancel-button,
+input::-webkit-search-results-button,
+input::-webkit-search-results-decoration {
+  display: none;
 }
 
 input[type="search"] {
@@ -287,7 +294,7 @@ label:before {
 }
 
 input:checked + label:before {
-  content: "✔";
+  content: url(img/Vector.svg);
 }
 
 /* disabled */
@@ -321,6 +328,7 @@ input:disabled + label:before {
 
 .striked {
   text-decoration: line-through;
+  color: #2f80ed;
 }
 
 .button-drag-image {
